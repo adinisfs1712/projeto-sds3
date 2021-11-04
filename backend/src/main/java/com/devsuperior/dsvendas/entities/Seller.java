@@ -11,16 +11,16 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tb_seller")
+@Table(name="tb_sellers")
 public class Seller {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	private String name;
 
-	@OneToMany(mappedby = "seller")
+	@OneToMany(mappedBy = "seller")
 	private List<Sale> sales = new ArrayList<>();
 
 
